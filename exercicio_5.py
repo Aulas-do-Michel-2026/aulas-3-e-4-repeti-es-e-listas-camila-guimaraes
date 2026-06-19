@@ -40,3 +40,26 @@ O cálculo de média já foi feito em sala e pode ser usado de exemplo.
 lista_de_organismos = [[50, 50, 50], [125, 99, 12], [19, 91, 42], [40, 189, 0], [1, 0, 0], [100, 100, 70], [99, 12, 12]]
 
 # Fazer a partir daqui
+
+posicao_maior_media = 0
+maior_media = 0
+posicao_atual = 0
+
+for organismo in lista_de_organismos:
+    soma_leituras = 0
+    quantidade_leituras = 0
+    
+    for leitura in organismo:
+        soma_leituras = soma_leituras + leitura
+        quantidade_leituras = quantidade_leituras + 1
+ 
+    media_atual = soma_leituras / quantidade_leituras
+    
+    if posicao_atual == 0 or media_atual > maior_media:
+        maior_media = media_atual
+        posicao_maior_media = posicao_atual
+        
+    posicao_atual = posicao_atual + 1
+
+
+print(f"O organismo com maior média é o da posição {posicao_maior_media} da lista.")
